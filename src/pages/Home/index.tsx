@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 import { useDispatch } from 'react-redux'
 import { MdFlightTakeoff } from 'react-icons/md'
+import { addBooking } from '../../store/modules/booking/actions'
 import './styles.css'
 
 export type Trip = {
@@ -26,10 +27,7 @@ function Home() {
   }, [])
 
   const handleAdd = (trip: Trip) => {
-    dispatch({
-      type: 'ADD_RESERVE',
-      trip
-    })
+    dispatch(addBooking(trip))
   }
 
   return (
