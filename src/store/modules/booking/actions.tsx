@@ -13,3 +13,11 @@ export function removeBooking(id: number) {
     tripId: id,
   }
 }
+
+export function updateAmount(id: number, amount: number) {
+  return {
+    type: 'UPDATE_TRIP_AMOUNT',
+    tripId: id,
+    amount: amount,
+  }
+}

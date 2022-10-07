@@ -1,16 +1,24 @@
-import { MdDelete } from 'react-icons/md'
+import { MdAdd, MdAddCircle, MdDelete, MdRemoveCircle } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../store'
-import { removeBooking } from '../../store/modules/booking/actions'
+import { removeBooking, updateAmount } from '../../store/modules/booking/actions'
 import type { Trip } from '../Home'
 import './styles.css'
 
 function Booking() {
-  const bookings: [Trip] = useSelector((state: RootState) => state.booking)
+  const bookings: Trip[] = useSelector((state: RootState) => state.booking)
   const dispatch = useDispatch();
   const handleRemove = (id: number) => {
     dispatch(removeBooking(id))
+  }
+
+  const decrementAmout = (trip: Trip) => {
+    dispatch(updateAmount(trip.id, trip.amount - 1))
+  }
+
+  const incrementAmount = (trip: Trip) => {
+    dispatch(updateAmount(trip.id, trip.amount + 1))
   }
 
   return (
@@ -24,7 +32,15 @@ function Booking() {
             alt={booking.title} />
 
           <strong>{booking.title}</strong>
-          <span>Quantity: {booking.amount}</span>
+          <div id='amount'>
+            <button type='button' onClick={() => decrementAmout(booking)}>
+              <MdRemoveCircle size={25} />
+            </button>
+            <input type={'text'} readOnly value={booking.amount}></input>
+            <button type='button' onClick={() => incrementAmount(booking)}>
+              <MdAddCircle size={25} />
+            </button>
+          </div>
           <button type='button' onClick={() => handleRemove(booking.id)}>
             <MdDelete size={20} color={'#000'} />
           </button>
