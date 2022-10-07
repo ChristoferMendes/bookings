@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import { MdFlightTakeoff } from 'react-icons/md'
 import './styles.css'
 
-export interface Trip {
+export type Trip = {
   id: number;
   title: string;
   status: boolean;
