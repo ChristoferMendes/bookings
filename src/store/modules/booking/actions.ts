@@ -1,30 +1,39 @@
 import type { Trip } from "../../../pages/Home";
+import { ActionTypes } from "./types";
 
 export function addBookingRequest(id: Trip['id']) {
   return {
-    type: 'ADD_RESERVE_REQUEST',
+    type: ActionTypes.addReserveRequest,
     id,
   }
 }
 
 export function addBookingSuccess(trip: Trip) {
   return {
-    type: 'ADD_RESERVE_SUCCESS',
+    type: ActionTypes.addReserveSuccess,
     trip,
   }
 }
 
-export function removeBooking(id: number) {
+export function removeReserve(id: number) {
   return {
-    type: 'REMOVE_RESERVE',
+    type: ActionTypes.removeReserve,
     tripId: id,
   }
 }
 
-export function updateAmount(id: Trip['id'], amount: Trip['amount']) {
+export function updateAmountRequest(id: Trip['id'], amount: Trip['amount']) {
   return {
-    type: 'UPDATE_TRIP_AMOUNT',
+    type: ActionTypes.updateTripAmountRequest,
     tripId: id,
-    amount: amount,
+    amount,
+  }
+}
+
+export function updateAmountSuccess(id: Trip['id'], amount: Trip['amount']) {
+  return {
+    type: ActionTypes.updateTripAmountSuccess,
+    tripId: id,
+    amount,
   }
 }
