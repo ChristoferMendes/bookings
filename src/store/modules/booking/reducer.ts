@@ -13,17 +13,7 @@ type State = Trip[] | [];
 const actions = {
   ADD_RESERVE_SUCCESS(state: State, action: Action) {
     return produce<Trip[]>(state, draft => {
-
-      const tripIndex = draft.findIndex(trip => trip.id === action.trip?.id);
-
-      if (tripIndex >= 0) {
-        draft[tripIndex].amount += 1;
-      } else {
-        draft.push({
-          ...action.trip,
-          amount: 1,
-        });
-      }
+      draft.push(action.trip);
     })
   },
   REMOVE_RESERVE(state: State, action: Action) {
