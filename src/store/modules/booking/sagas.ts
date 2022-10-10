@@ -2,7 +2,6 @@ import { all, call, put, takeLatest } from 'redux-saga/effects'
 import { addBookingRequest, addBookingSuccess } from './actions'
 import { api } from '../../../services/api'
 import { Trip } from '../../../pages/Home'
-import { RootState } from '../..'
 import { AxiosResponse } from 'axios'
 import { ActionTypes } from './types'
 
