@@ -1,8 +1,15 @@
 import type { Trip } from "../../../pages/Home";
 
-export function addBooking(trip: Trip) {
+export function addBookingRequest(id: Trip['id']) {
   return {
-    type: 'ADD_RESERVE',
+    type: 'ADD_RESERVE_REQUEST',
+    id,
+  }
+}
+
+export function addBookingSuccess(trip: Trip) {
+  return {
+    type: 'ADD_RESERVE_SUCCESS',
     trip,
   }
 }
@@ -14,7 +21,7 @@ export function removeBooking(id: number) {
   }
 }
 
-export function updateAmount(id: number, amount: number) {
+export function updateAmount(id: Trip['id'], amount: Trip['amount']) {
   return {
     type: 'UPDATE_TRIP_AMOUNT',
     tripId: id,

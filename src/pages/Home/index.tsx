@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { api } from '../../services/api'
 import { useDispatch } from 'react-redux'
 import { MdFlightTakeoff } from 'react-icons/md'
-import { addBooking } from '../../store/modules/booking/actions'
+import { addBookingRequest } from '../../store/modules/booking/actions'
 import './styles.css'
 
 export type Trip = {
@@ -26,8 +26,8 @@ function Home() {
     })()
   }, [])
 
-  const handleAdd = (trip: Trip) => {
-    dispatch(addBooking(trip))
+  const handleAdd = (id: Trip['id']) => {
+    dispatch(addBookingRequest(id))
   }
 
   return (
@@ -39,7 +39,7 @@ function Home() {
             <strong>{trip.title}</strong>
             <span>Status {trip.status ? 'Available' : 'Unavailable'}</span>
 
-            <button type='button' onClick={() => handleAdd(trip)}>
+            <button type='button' onClick={() => handleAdd(trip.id)}>
               <div>
                 <MdFlightTakeoff size={16} color='#fff' />
               </div>
