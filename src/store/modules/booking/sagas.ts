@@ -6,11 +6,6 @@ import { RootState } from '../..'
 import { AxiosResponse } from 'axios'
 import { ActionTypes } from './types'
 
-// export interface BookingRequest {
-//   id: ReturnType<typeof addBookingRequest>;
-//   type: string;
-// }
-
 type BookingSagas = ReturnType<typeof addBookingRequest>;
 
 function* addToBooking({ id }: BookingSagas) {
