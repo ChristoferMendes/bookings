@@ -26,10 +26,7 @@ const actions = {
       }
     })
   },
-  UPDATE_TRIP_AMOUNT(state: State, action: Action) {
-    if (action.amount && action.amount <= 0) {
-      return state;
-    }
+  UPDATE_TRIP_AMOUNT_SUCCESS(state: State, action: Action) {
     return produce(state, draft => {
       const tripIndex = draft.findIndex(trip => trip.id === action.tripId);
 

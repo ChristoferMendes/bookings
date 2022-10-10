@@ -2,7 +2,7 @@ import { MdAdd, MdAddCircle, MdDelete, MdRemoveCircle } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../store'
-import { removeBooking, updateAmount } from '../../store/modules/booking/actions'
+import { removeReserve, updateAmountRequest } from '../../store/modules/booking/actions'
 import type { Trip } from '../Home'
 import './styles.css'
 
@@ -10,15 +10,15 @@ function Booking() {
   const bookings: Trip[] = useSelector((state: RootState) => state.booking)
   const dispatch = useDispatch();
   const handleRemove = (id: number) => {
-    dispatch(removeBooking(id))
+    dispatch(removeReserve(id))
   }
 
   const decrementAmout = (trip: Trip) => {
-    dispatch(updateAmount(trip.id, trip.amount - 1))
+    dispatch(updateAmountRequest(trip.id, trip.amount - 1))
   }
 
   const incrementAmount = (trip: Trip) => {
-    dispatch(updateAmount(trip.id, trip.amount + 1))
+    dispatch(updateAmountRequest(trip.id, trip.amount + 1))
   }
 
   return (
