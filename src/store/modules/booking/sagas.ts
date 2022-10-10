@@ -6,12 +6,14 @@ import { RootState } from '../..'
 import { AxiosResponse } from 'axios'
 import { ActionTypes } from './types'
 
-export interface BookingRequest {
-  id: ReturnType<typeof addBookingRequest>;
-  type: string;
-}
+// export interface BookingRequest {
+//   id: ReturnType<typeof addBookingRequest>;
+//   type: string;
+// }
 
-function* addToBooking({ id }: BookingRequest) {
+type BookingSagas = ReturnType<typeof addBookingRequest>;
+
+function* addToBooking({ id }: BookingSagas) {
 
   const response: AxiosResponse<Trip> = yield call(api.get, `/trips/${id}`)
 
@@ -19,6 +21,10 @@ function* addToBooking({ id }: BookingRequest) {
   yield put(addBookingSuccess(response.data))
 }
 
-export default all([
-  takeLatest(ActionTypes.addReserveRequest, addToBooking)
-])
+function* takeBooking() {
+  yield all([
+    takeLatest(ActionTypes.addReserveRequest, addToBooking)
+  ])
+}
+
+export default takeBooking;

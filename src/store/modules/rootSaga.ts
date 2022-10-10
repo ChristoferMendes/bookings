@@ -1,8 +1,8 @@
-import { all } from 'redux-saga/effects'
+import { all, fork } from 'redux-saga/effects'
+import takeBooking from './booking/sagas'
 
-import booking, { BookingRequest } from './booking/sagas'
-type a = () => any;
+import booking from './booking/sagas'
 
-export default function* rootSaga (): Generator<a> {
-  return yield all([booking])
+export default function* rootSaga () {
+  yield all([fork(takeBooking)])
 }
