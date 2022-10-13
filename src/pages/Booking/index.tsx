@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import type { RootState } from '../../store'
 import { removeReserve, updateAmountRequest } from '../../store/modules/booking/actions'
-import type { Trip } from '../Home'
+import { Trip } from '../../typescript/interfaces'
 import './styles.css'
 
 function Booking() {

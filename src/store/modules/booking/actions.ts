@@ -1,4 +1,4 @@
-import type { Trip } from "../../../pages/Home";
+import { Trip } from "../../../typescript/interfaces";
 import { ActionTypes } from "./types";
 
 export function addBookingRequest(id: Trip['id']) {

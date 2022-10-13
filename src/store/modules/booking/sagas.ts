@@ -1,9 +1,14 @@
 import { all, call, put, takeLatest, select } from 'redux-saga/effects'
 import { addBookingRequest, addBookingSuccess, updateAmountSuccess } from './actions'
 import { api } from '../../../services/api'
-import { Trip } from '../../../pages/Home'
 import { AxiosResponse } from 'axios'
 import { ActionTypes } from './types'
+import { Trip } from '../../../typescript/interfaces'
+
+interface Stock {
+  id: number;
+  amount: number;
+}
 
 type BookingSagas = ReturnType<typeof addBookingRequest>;
 type UpdateAmountSagas = ReturnType<typeof updateAmountSuccess>
@@ -16,7 +21,7 @@ function* addToBooking({ id }: BookingSagas) {
 
   const tripExists: CurrentTrip = yield select(selectCurrentTrip);
 
-  const myStock: AxiosResponse<any> = yield call(api.get, `/stock/${id}`)
+  const myStock: AxiosResponse<Stock> = yield call(api.get, `/stock/${id}`)
   const stockAmount = myStock.data.amount;
   const currentStock = tripExists ? tripExists.amount : 0;
   const amount = currentStock + 1;

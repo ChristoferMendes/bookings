@@ -1,12 +1,7 @@
 import produce from "immer";
-import type { Trip } from "../../../pages/Home";
+import { Action, Trip } from "../../../typescript/interfaces";
 
-interface Action {
-  type: string;
-  trip: Trip;
-  tripId?: number
-  amount?: number;
-}
+
 
 type State = Trip[] | [];
 

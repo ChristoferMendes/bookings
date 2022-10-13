@@ -4,15 +4,9 @@ import { useDispatch } from 'react-redux'
 import { MdFlightTakeoff } from 'react-icons/md'
 import { addBookingRequest } from '../../store/modules/booking/actions'
 import './styles.css'
+import { Trip } from '../../typescript/interfaces'
 
-export type Trip = {
-  id: number;
-  title: string;
-  status: boolean;
-  image: string;
-  amount: number;
 
-}
 
 function Home() {
   const dispatch = useDispatch();
