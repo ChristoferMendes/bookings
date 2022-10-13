@@ -42,6 +42,8 @@ $ yarn json-server server.json -p 3333
 </details>
 
 ## Run the application ✈️
+### In another terminal (**because you can't stop json-server**), type:
+
 ```console
 $ yarn dev
 ```
