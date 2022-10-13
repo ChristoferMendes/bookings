@@ -32,5 +32,31 @@
       "status": true,
       "image": "https://sujeitoprogramador.com/wp-content/uploads/2019/12/fernand-noronha.jpg"
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Artie",
+      "age": 33,
+      "married": true
+    },
+    {
+      "id": 2,
+      "name": "Chris",
+      "age": 19,
+      "married": false
+    }
+  ],
+  "users_trips": [
+    {
+      "id": 1,
+      "userId": 2,
+      "tripId": 1
+    },
+    {
+      "id": 2,
+      "userId": 1,
+      "tripId": 1
+    }
   ]
 }
