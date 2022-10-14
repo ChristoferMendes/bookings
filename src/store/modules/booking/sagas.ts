@@ -4,6 +4,8 @@ import { api } from '../../../services/api'
 import { AxiosResponse } from 'axios'
 import { ActionTypes } from './types'
 import { Trip } from '../../../typescript/interfaces'
+// import { toast } from 'react-toastify'
+
 
 interface Stock {
   id: number;
@@ -41,7 +43,20 @@ function* addToBooking({ id }: BookingSagas) {
       ...response.data,
       amount: 1,
     }
+
     yield put(addBookingSuccess(data))
+    
+    const apiPost = () => {
+     return api.post('/users_trips', {
+      id: Math.floor(Math.random()),
+      userId: 1,
+      tripId: id,
+    })}
+    try {
+      yield call(apiPost)
+    } catch (error) {
+      console.log(error);
+    }
   }
 }
 
