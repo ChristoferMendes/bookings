@@ -30,8 +30,7 @@ function Booking() {
           <img
             src={booking.image}
             alt={booking.title} />
-
-          <strong>{booking.title}</strong>
+          <strong className='booking-title'>{booking.title}</strong>
           <div id='amount'>
             <button type='button' onClick={() => decrementAmout(booking)}>
               <MdRemoveCircle size={25} />

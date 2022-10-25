@@ -1,8 +1,9 @@
-.box {
+.box .box-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 20px;
   list-style: none;
+  /* width: fit-content; */
 }
 
 .box li {
@@ -42,4 +43,23 @@
   display: flex;
   align-items: center;
   padding: 10px;
+}
+
+@media screen and (max-width: 980px) {
+  .box {
+    grid-template-columns: 1fr;
+  }
+
+  .box .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .box li {
+    margin: 10px 20px;
+    display: flex;
+    width: fit-content;
+  }
 }

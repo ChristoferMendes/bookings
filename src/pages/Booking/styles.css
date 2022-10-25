@@ -43,3 +43,16 @@ footer button {
   padding: 5px;
   max-width: 45px;
 }
+
+.booking-title {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 100px;
+  transition: all .6s;
+}
+
+.booking-title:hover {
+  overflow: visible;
+  max-width: 200px;
+}
