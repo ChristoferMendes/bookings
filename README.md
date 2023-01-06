@@ -13,11 +13,10 @@ $ yarn
 ```
 
 ## Json-server usage 🤔
-In this app, I'm using json-server, so you will need to install it in order to reproduce the app!
+In this app, I'm using json-server, so you will need to run the server script in order to reproduce the app!
 
 ```console
-$ yarn add json-server
-$ yarn json-server server.json -p 3333
+$ yarn server
 ```
 
 <details>
