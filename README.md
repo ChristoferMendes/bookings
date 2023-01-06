@@ -24,7 +24,7 @@ $ yarn server
 
   ```console
 
- \{^_^}/ hi!
+  \{^_^}/ hi!
 
   Loading server.json
   Done
@@ -32,9 +32,13 @@ $ yarn server
   Resources
   http://localhost:3333/stock
   http://localhost:3333/trips
+  http://localhost:3333/users
+  http://localhost:3333/users_trips
 
   Home
   http://localhost:3333
+
+  Type s + enter at any time to create a snapshot of the database
 
 ```
 
