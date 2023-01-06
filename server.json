@@ -90,6 +90,31 @@
       "id": 5,
       "userId": 1,
       "tripId": 4
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "tripId": 22
+    },
+    {
+      "id": 7,
+      "userId": 1,
+      "tripId": 4
+    },
+    {
+      "id": 8,
+      "userId": 1,
+      "tripId": 1
+    },
+    {
+      "id": 9,
+      "userId": 1,
+      "tripId": 4
+    },
+    {
+      "id": 10,
+      "userId": 1,
+      "tripId": 22
     }
   ]
 }

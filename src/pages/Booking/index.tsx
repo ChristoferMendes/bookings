@@ -1,6 +1,7 @@
 import { MdAdd, MdAddCircle, MdDelete, MdRemoveCircle } from 'react-icons/md'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import type { RootState } from '../../store'
 import { removeReserve, updateAmountRequest } from '../../store/modules/booking/actions'
 import { Trip } from '../../typescript/interfaces'
@@ -46,7 +47,9 @@ function Booking() {
         </div>
       ))}
       <footer>
-        <button type='button'>Request bookings</button>
+        <Link to={'/'} style={{ textDecoration: 'none' }}>
+          <button type='button'>Request bookings</button>
+        </Link>
       </footer>
     </div>
 
